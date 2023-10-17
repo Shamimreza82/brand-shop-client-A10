@@ -17,22 +17,19 @@ const AuthProvider = ({children}) => {
     }
 
     // Login user
-
     const Login = (email, password) => {
         setLoding(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     // login With googel
-
     const googleLogin = () => {
         setLoding(true)
         return signInWithPopup(auth, provider)
     }
 
     // sine Out
-
-    const logOut = () => {
+    const logeOut = () => {
         return  signOut(auth)
     }
 
@@ -53,6 +50,7 @@ const AuthProvider = ({children}) => {
         createAccount, 
         Login,
         googleLogin, 
+        logeOut, 
     }
 
     return (
