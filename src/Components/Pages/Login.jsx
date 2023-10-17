@@ -1,33 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
+
+
+    
   return (
     <div className="flex justify-center items-center min-h-[500px]">
-        <div className="flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
-      <div className="self-center mb-6 text-xl font-light text-gray-600 sm:text-2xl dark:text-white">
+        <div className="flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow  sm:px-6 md:px-8 lg:px-10">
+      <div className="self-center mb-6 text-xl font-light text-gray-600 sm:text-2xl ">
         Login To Your Account
       </div>
       <div className="flex gap-4 item-center">
         <button
           type="button"
-          className="py-2 px-4 flex justify-center items-center  bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+          className="py-2 px-4 flex justify-center items-center  bg-[#FFB000] hover:bg-[#FFCF9D] focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
         >
-          <svg
-            width="20"
-            height="20"
-            fill="currentColor"
-            className="mr-2"
-            viewBox="0 0 1792 1792"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"></path>
-          </svg>
-          Facebook
+          <FcGoogle className="mr-3"></FcGoogle>
+          Google
         </button>
       </div>
       <div className="mt-8">
-        <form action="#" autoComplete="off">
+        <form  autoComplete="off">
           <div className="flex flex-col mb-2">
             <div className="flex relative ">
               <span className="rounded-l-md inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
@@ -43,6 +38,7 @@ const Login = () => {
               </span>
               <input
                 type="text"
+                name="email"
                 id="sign-in-email"
                 className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 placeholder="Your email"
@@ -64,6 +60,7 @@ const Login = () => {
               </span>
               <input
                 type="password"
+                name="password"
                 id="sign-in-email"
                 className=" rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 placeholder="Your password"
@@ -74,7 +71,7 @@ const Login = () => {
             <div className="flex ml-auto">
               <a
                 href="#"
-                className="inline-flex text-xs font-thin text-gray-500 sm:text-sm dark:text-gray-100 hover:text-gray-700 dark:hover:text-white"
+                className="inline-flex text-xs font-thin text-gray-500 sm:text-sm dark:text-black hover:text-gray-700 dark:hover:text-black"
               >
                 Forgot Your Password?
               </a>
@@ -83,7 +80,7 @@ const Login = () => {
           <div className="flex w-full">
             <button
               type="submit"
-              className="py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+              className="py-2 px-4  bg-[#FFCF9D] hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
             >
               Login
             </button>
@@ -95,7 +92,7 @@ const Login = () => {
           to="/register"
           className="inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-white"
         >
-          <span className="ml-2">You don&#x27;t have an account?</span>
+          <span className="ml-2 text-black">You don&#x27;t have an account Register?</span>
         </Link>
       </div>
     </div>
