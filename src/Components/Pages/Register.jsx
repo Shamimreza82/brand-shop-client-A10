@@ -1,13 +1,58 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+
 
 const Register = () => {
 
+    const {createAccount} = useContext(AuthContext)
+    const [error, setError] = useState('')
 
 
+ const handelRegister = e => {
+    e.preventDefault()
+    const form = e.target; 
+    const name = form.name.value; 
+    const photo = form.photo.value;
+    const email = form.email.value; 
+    const password = form.password.value; 
+    console.log(name, photo, email, password);
+    setError('')
+
+    if(password.length < 6){
+       return setError("Your password must be at least 6 characters")
+
+    } else if(!/^(?=.*[A-Z]).*$/.test(password)){
+        return setError("Password must have at least one Uppercase Character.")
+
+    } else if(!/^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).*$/.test(password)){
+        return setError("Password must contain at least one Special Symbol.")
+    }
     
+    createAccount(email, password)
+    .then(result => {
+        console.log(result.user);
+        Swal.fire(
+            'Register Successful',
+            'Please Login',
+            'success'
+          )
+    })
+    .catch(error => {
+        // Swal.fire(
+        //     'Email already used',
+        //     'Please Try Anther Email or Login',
+        //     'error'
+        //   )  
+          console.error(error) 
+    } )
+
+ }
+
+
   return (
     <div className="flex flex-wrap w-full ">
       <div className="flex flex-col w-full md:w-1/2 m-auto md:mt-24">
@@ -15,7 +60,7 @@ const Register = () => {
         <div className="flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32 shadow-lg">
           <p className="text-3xl text-center">Register</p>
           
-          <form className="flex flex-col pt-3 md:pt-8">
+          <form onSubmit={handelRegister} className="flex flex-col pt-3 md:pt-8">
             <div className="flex flex-col pt-4">
               <div className="flex relative ">
                 <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
@@ -84,11 +129,12 @@ const Register = () => {
                 />
               </div>
             </div>
+            <p className="text-xl -mt-5 mb-3 font-bold text-red-600">{error}</p>
             <button
               type="submit"
               className="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2"
             >
-              <span className="w-full">Submit</span>
+              <span className="w-full">Register</span>
             </button>
           </form>
           <div className="flex gap-4 item-center mt-5">
