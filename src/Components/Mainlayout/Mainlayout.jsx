@@ -5,7 +5,7 @@ import Navber2 from './Navber2';
 
 const Mainlayout = () => {
     return (
-        <div>
+        <div className='font-Poppins'>
             <Navber2></Navber2>
             <Navber></Navber>
             <Outlet></Outlet>

@@ -5,7 +5,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 export const Navber = () => {
 
-  const {logeOut, googleLogin} = useContext(AuthContext)
+  const {logeOut, googleLogin, user} = useContext(AuthContext)
 
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark" ) 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,11 +35,11 @@ export const Navber = () => {
   }
   
     return (
-      <div className="bg-gray-500">
-        <div className="px-4 py-5 justify-between mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
+      <div>
+        <div className="px-4 py-3 justify-between mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 shadow-md">
           <div className="relative flex items-center justify-between"> 
              
-              <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 ">
+              <span className="ml-2 text-xl font-bold tracking-wide ">
               Tech Globe Hub
               </span>
             <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -48,7 +48,7 @@ export const Navber = () => {
                   to="/"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   Home
                 </Link>
@@ -58,7 +58,7 @@ export const Navber = () => {
                   to="/addProduct"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   Add Product
                 </Link>
@@ -68,7 +68,7 @@ export const Navber = () => {
                   to="/myCart"
                   aria-label="Product pricing"
                   title="Product pricing"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   My Cart
                 </Link>
@@ -78,7 +78,7 @@ export const Navber = () => {
                   to="/about"
                   aria-label="About us"
                   title="About us"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   About us
                 </Link>
@@ -88,7 +88,7 @@ export const Navber = () => {
                   to="/contact"
                   aria-label="About us"
                   title="About us"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   Contact
                 </Link>
@@ -110,7 +110,7 @@ export const Navber = () => {
               <li>
                 <Link
                   to="/"
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                   aria-label="Sign up"
                   title="Sign up"
                 >
@@ -120,7 +120,7 @@ export const Navber = () => {
               <li>
                 <Link
                   onClick={handleSineOut}
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                   aria-label="Sign up"
                   title="Sign up"
                 >
@@ -249,7 +249,7 @@ export const Navber = () => {
                         <li>
                           <a
                             href="/"
-                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                             aria-label="Sign up"
                             title="Sign up"
                           >

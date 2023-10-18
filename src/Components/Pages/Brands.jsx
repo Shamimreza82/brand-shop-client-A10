@@ -19,14 +19,14 @@ const Brands = () => {
 
     return (
         <div className='max-w-7xl m-auto'>
-            <h1 className='text-black text-2xl py-6 text-center font-bold'>Our Brand</h1>
+            <h1 className='text-2xl py-6 text-center font-bold'>Our Brand</h1>
             <div className='grid grid-cols-3 gap-4'>
             
             {
                 brand.map (bra => 
-                <div key={bra.brand} className='' >
+                <div key={bra.brand} >
                 <Link to={`/products/${bra.brand}`} className='mt-6'>
-                <div className='bg-slate-100 shadow-lg p-5'>
+                <div className=' shadow-lg p-5'>
                     <img className='h-48 w-full rounded-lg' src={bra.image} alt="" />
                     <p className='text-center py-3 uppercase font-bold'>{bra.brand}</p>
                  </div>
