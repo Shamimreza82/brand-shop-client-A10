@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
@@ -8,6 +8,7 @@ const Login = () => {
     const {Login, googleLogin} = useContext(AuthContext)
     const [error, setError] = useState('')
     const navegate = useNavigate('')
+    const location = useLocation()
   
 
 
@@ -39,7 +40,7 @@ const Login = () => {
             'Login SuccessFull',
             'success'
           )
-          navegate("/")
+          navegate(location?.state ? location.state : "/")
     })
     .catch(error => {
         Swal.fire(
@@ -63,7 +64,7 @@ const Login = () => {
             'Login SuccessFull',
             'success'
           )
-          navegate("/")
+          navegate(location?.state ? location.state : "/")
     })
     .catch(error => {
         Swal.fire(

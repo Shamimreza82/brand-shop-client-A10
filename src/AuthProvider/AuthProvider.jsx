@@ -30,6 +30,7 @@ const AuthProvider = ({children}) => {
 
     // sine Out
     const logeOut = () => {
+        setLoding(true)
         return  signOut(auth)
     }
 
@@ -51,6 +52,7 @@ const AuthProvider = ({children}) => {
         Login,
         googleLogin, 
         logeOut, 
+        loeading, 
     }
 
     return (
