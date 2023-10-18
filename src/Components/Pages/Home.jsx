@@ -4,6 +4,7 @@ import Footer from '../Mainlayout/Footer';
 import Contact from './Contact';
 import About from './About';
 import Brands from './Brands';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     return (

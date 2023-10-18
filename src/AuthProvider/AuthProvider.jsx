@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from '../fitebaseConfig/firebaseConfig';
 
 const provider = new GoogleAuthProvider();
@@ -34,6 +34,12 @@ const AuthProvider = ({children}) => {
         return  signOut(auth)
     }
 
+    const userPhotoAndNameUpdate = (name, photo) => {
+        updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo 
+        })
+    }
+
 
     useEffect(()=> {
             onAuthStateChanged(auth, currentuser => {
@@ -53,6 +59,7 @@ const AuthProvider = ({children}) => {
         googleLogin, 
         logeOut, 
         loeading, 
+        userPhotoAndNameUpdate
     }
 
     return (

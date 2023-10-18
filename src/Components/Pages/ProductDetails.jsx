@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -39,6 +40,9 @@ const ProductDetails = () => {
 
   return (
     <div>
+          <Helmet>
+            <title>Tech Globe Hub | Product Detail</title>
+          </Helmet>
       {singleProduct?.map((singlep) => (
         <div
           key={singlep._id}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -52,6 +53,9 @@ const MyCart = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>Tech Globe Hub | My Cart</title>
+          </Helmet>
             <div className='md:w-[80%] m-auto grid md:grid-cols-2' >
                 {
                 myCarts.map(myCart =>

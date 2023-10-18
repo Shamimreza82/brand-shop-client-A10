@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
 
 const AddProduct = () => {
@@ -46,6 +47,9 @@ const AddProduct = () => {
 
     return (
         <div className='max-w-7xl m-auto'>
+          <Helmet>
+            <title>Tech Globe Hub | Add Product</title>
+          </Helmet>
         <div className="font-Raleway">
           <div
             className="min-h-[100vh] md:py-10 py-3 md:my-10"

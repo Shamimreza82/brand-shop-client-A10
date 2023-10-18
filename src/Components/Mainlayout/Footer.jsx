@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-slate-200">
+    <div className="border-t">
         <div className="max-w-7xl m-auto">
         <footer className="footer p-10 b text-base-content">
         <nav>

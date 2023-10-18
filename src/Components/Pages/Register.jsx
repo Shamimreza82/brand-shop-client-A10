@@ -4,90 +4,96 @@ import { MdDriveFileRenameOutline } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
-
+import { Helmet } from "react-helmet";
 
 const Register = () => {
+  const { createAccount, userPhotoAndNameUpdate } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
-    const {createAccount} = useContext(AuthContext)
-    const [error, setError] = useState('')
-
-
- const handelRegister = e => {
-    e.preventDefault()
-    const form = e.target; 
-    const name = form.name.value; 
+  const handelRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
     const photo = form.photo.value;
-    const email = form.email.value; 
-    const password = form.password.value; 
+    const email = form.email.value;
+    const password = form.password.value;
     console.log(name, photo, email, password);
-    setError('')
+    setError("");
 
-    if(password.length < 6){
-       return setError("Your password must be at least 6 characters")
-
-    } else if(!/^(?=.*[A-Z]).*$/.test(password)){
-        return setError("Password must have at least one Uppercase Character.")
-
-    } else if(!/^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).*$/.test(password)){
-        return setError("Password must contain at least one Special Symbol.")
+    if (password.length < 6) {
+      return setError("Your password must be at least 6 characters");
+    } else if (!/^(?=.*[A-Z]).*$/.test(password)) {
+      return setError("Password must have at least one Uppercase Character.");
+    } else if (
+      !/^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).*$/.test(password)
+    ) {
+      return setError("Password must contain at least one Special Symbol.");
     }
-    
+
+    // update User
+
     createAccount(email, password)
-    .then(result => {
-        console.log(result.user);
-        Swal.fire(
-            'Register Successful',
-            'Please Login',
-            'success'
-          )
-    })
-    .catch(error => {
+      .then((result) => {
+        userPhotoAndNameUpdate(name, photo)
+          .then(() => {
+             Swal.fire("Register Successful", "Please Login", "success");
+          })
+          .catch((error) => {
+            console.log(error)
+          });
+          Swal.fire("Register Successful", "Please Login", "success");
+      })
+      .catch((error) => {
         // Swal.fire(
         //     'Email already used',
         //     'Please Try Anther Email or Login',
         //     'error'
-        //   )  
-          console.error(error) 
-    } )
-
- }
-
+        //   )
+        console.error(error);
+      });
+  };
 
   return (
     <div className="flex flex-wrap w-full ">
+      <Helmet>
+        <title>Tech Globe Hub | Register</title>
+      </Helmet>
       <div className="flex flex-col w-full md:w-1/2 m-auto md:mt-24">
         <div className="flex justify-center pt-12 md:justify-start md:pl-12 md:-mb-24"></div>
-        <div className="flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32 shadow-lg">
-          <p className="text-3xl text-center">Register</p>
-          
-          <form onSubmit={handelRegister} className="flex flex-col pt-3 md:pt-8">
+        <div className="flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32  border ">
+          <p className="text-3xl text-center mt-7">Register</p>
+
+          <form
+            onSubmit={handelRegister}
+            className="flex flex-col pt-3 md:pt-8"
+          >
             <div className="flex flex-col pt-4">
               <div className="flex relative ">
-                <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
+                <span className=" inline-flex  items-center px-3 border-t  border-l border-b    shadow-sm text-sm">
                   <MdDriveFileRenameOutline></MdDriveFileRenameOutline>
                 </span>
                 <input
                   type="text"
                   name="name"
                   id="design-login-email"
-                  className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                  className=" flex-1 appearance-none border w-full py-2 px-4 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Name"
                 />
               </div>
               <div className="flex relative mt-3">
-                <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
+                <span className=" inline-flex  items-center px-3 border-t  border-l border-b   shadow-sm text-sm">
                   <MdDriveFileRenameOutline></MdDriveFileRenameOutline>
                 </span>
                 <input
                   type="text"
                   name="photo"
                   id="design-login-email"
-                  className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                  className="  flex-1 appearance-none border w-full py-2 px-4 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Photo URL"
                 />
               </div>
               <div className="flex relative mt-3">
-                <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
+                <span className=" inline-flex  items-center px-3 border-t  border-l border-b    shadow-sm text-sm">
                   <svg
                     width="15"
                     height="15"
@@ -102,14 +108,14 @@ const Register = () => {
                   type="text"
                   name="email"
                   id="design-login-email"
-                  className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                  className="  flex-1 appearance-none border w-full py-2 px-4 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Email"
                 />
               </div>
             </div>
             <div className="flex flex-col pt-4 mb-12">
               <div className="flex relative ">
-                <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
+                <span className=" inline-flex  items-center px-3 border-t  border-l border-b    shadow-sm text-sm">
                   <svg
                     width="15"
                     height="15"
@@ -124,15 +130,15 @@ const Register = () => {
                   type="password"
                   name="password"
                   id="design-login-password"
-                  className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                  className="  flex-1 appearance-none border w-full py-2 px-4 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Password"
                 />
               </div>
             </div>
-            <p className="text-xl -mt-5 mb-3 font-bold text-red-600">{error}</p>
+            <p className="text-base -mt-5 mb-3  text-red-600">{error}</p>
             <button
               type="submit"
-              className="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2"
+              className="w-full px-4 py-2 text-base font-semibold border hover:bg-[#FFCF9D] rounded-md text-center  transition duration-200 ease-in  shadow-md hover:text-black hover: focus:outline-none focus:ring-2"
             >
               <span className="w-full">Register</span>
             </button>
@@ -140,9 +146,9 @@ const Register = () => {
           <div className="flex gap-4 item-center mt-5">
             <button
               type="button"
-              className="py-2 px-4 flex justify-center items-center  bg-[#FFB000] hover:bg-[#FFCF9D] focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+              className="py-2 px-4 flex justify-center items-center border   hover:bg-[#FFCF9D] focus:ring-blue-500 focus:ring-offset-blue-200  w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 hover:text-black focus:ring-offset-2  rounded-lg "
             >
-              <FcGoogle className="mr-3"></FcGoogle>
+              <FcGoogle className="mr-3 text-3xl"></FcGoogle>
               Google
             </button>
           </div>
