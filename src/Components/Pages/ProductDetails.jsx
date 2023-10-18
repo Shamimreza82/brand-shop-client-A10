@@ -1,14 +1,15 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import Brand from "./Brand";
+import Swal from "sweetalert2";
+
 
 const ProductDetails = () => {
   const singleProduct = useLoaderData();
   
     const [name] = singleProduct
-    
 
-
+    delete name._id
+    console.log(name);
 
     
 
@@ -25,8 +26,15 @@ const ProductDetails = () => {
     .then(res => res.json())
     .then(data => {
         console.log(data);
+        Swal.fire(
+            'Cart Successfull',
+            'Check the Product My Car Section',
+            'success'
+          )
     })
  }
+
+
 
 
   return (
@@ -42,10 +50,10 @@ const ProductDetails = () => {
           <div className="p-6">
             <div className="flex items-center justify-between mb-2">
               <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-                Apple AirPods
+                {singlep.name}
               </p>
               <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-                $95.00
+                {singlep.price}
               </p>
             </div>
             <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
@@ -60,7 +68,7 @@ const ProductDetails = () => {
             >
               Add to Cart
             </Link>
-            <Link>
+            <Link to={`/updateProduct/${singlep.name}`} >
             <button
               className="btn"
               type="button"

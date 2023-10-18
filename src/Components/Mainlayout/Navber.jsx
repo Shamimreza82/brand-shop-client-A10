@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 export const Navber = () => {
+
+  const {logeOut, googleLogin} = useContext(AuthContext)
 
     // const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light" ) 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +15,16 @@ export const Navber = () => {
     //     const localTheme = localStorage.getItem('theme'); 
     //     document.querySelector("html").setAttribute("data-theme", localTheme)
     // }, [theme]) 
+
+
+    const handleSineOut = () => {
+      logeOut()
+      .then(() => {
+        alert("sine out successfully")
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
   
     return (
       <div className="bg-gray-500">
@@ -94,6 +107,16 @@ export const Navber = () => {
                   title="Sign up"
                 >
                   Login
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={handleSineOut}
+                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  aria-label="Sign up"
+                  title="Sign up"
+                >
+                  Sine Out
                 </Link>
               </li>
               
