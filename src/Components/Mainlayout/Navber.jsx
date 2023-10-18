@@ -15,7 +15,7 @@ export const Navber = () => {
   
     return (
       <div className="bg-gray-500">
-        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="px-4 py-5 justify-between mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8">
           <div className="relative flex items-center justify-between"> 
              
               <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 ">
@@ -88,7 +88,7 @@ export const Navber = () => {
 
               <li>
                 <Link
-                  to="/login"
+                  to="/"
                   className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                   aria-label="Sign up"
                   title="Sign up"
@@ -98,14 +98,6 @@ export const Navber = () => {
               </li>
               
             </ul>
-
-
-
-
-
-{/* mobile */}
-
-
             <div className="lg:hidden">
               <button
                 aria-label="Open Menu"
@@ -128,6 +120,12 @@ export const Navber = () => {
                   />
                 </svg>
               </button>
+
+
+
+{/* mobile */}
+
+
               {isMenuOpen && (
                 <div className="absolute top-0 left-0 w-full">
                   <div className="p-5 bg-white border rounded shadow-sm">

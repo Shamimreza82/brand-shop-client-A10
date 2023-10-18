@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "brand": "apple",
+      "image": "https://i.ibb.co/h9QyXmN/apple.jpg"
+    },
+    {
+      "id": 2,
+      "brand": "samsung",
+      "image": "https://i.ibb.co/HDYSH3R/samsung.jpg"
+    },
+    {
+      "id": 3,
+      "brand": "sony",
+      "image": "https://i.ibb.co/FKh7NrH/sony.jpg"
+    },
+    {
+      "id": 4,
+      "brand": "htc",
+      "image": "https://i.ibb.co/djV0m3Z/htc.png"
+    },
+    {
+      "id": 5,
+      "brand": "xiaomi",
+      "image": "https://i.ibb.co/3YrG6D6/Xiome.jpg"
+    },
+    {
+      "id": 6,
+      "brand": "oppo",
+      "image": "https://i.ibb.co/1RyLKx8/Oppo.jpg"
+    }
+  ]

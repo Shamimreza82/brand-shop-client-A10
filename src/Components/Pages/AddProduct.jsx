@@ -45,7 +45,7 @@ const AddProduct = () => {
 
 
     return (
-        <div>
+        <div className='max-w-7xl m-auto'>
         <div className="font-Raleway">
           <div
             className="min-h-[100vh] md:py-10 py-3 md:my-10"
