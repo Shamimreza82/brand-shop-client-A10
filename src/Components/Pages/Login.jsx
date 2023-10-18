@@ -68,7 +68,7 @@ const Login = () => {
       <Helmet>
         <title>Tech Globe Hub | Login</title>
       </Helmet>
-      <div  className="flex justify-center items-center mt-52">
+      <div  className="flex justify-center items-center md:mt-52 mt-5 px-3">
         <div className="flex flex-col w-full max-w-md px-4 py-8  rounded-lg shadow  sm:px-6 md:px-8 lg:px-10 border ">
           <div className="self-center mb-6 text-xl font-light  sm:text-2xl ">
             Login To Your Account
@@ -155,8 +155,8 @@ const Login = () => {
               to="/register"
               className="inline-flex items-center text-xs font-thin text-center  "
             >
-              <span className="ml-2 ">
-                You don&#x27;t have an account Register?
+              <span className="ml-2 text-base ">
+                You don&#x27;t have an account <span className="font-bold text-green-600 underline">Register</span>?
               </span>
             </Link>
           </div>

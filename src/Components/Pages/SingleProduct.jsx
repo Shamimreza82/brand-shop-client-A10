@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 const SingleProduct = ({ product }) => {
   console.log(product);
   return (
-    <div>
-        {/* <div className="h-[500px]">
-
-        </div> */}
+    <div >
       <div className="relative flex flex-col mt-16 text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
         <div className="relativemx-4 -mt-6 overflow-hidden text-white  rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
           <img className="h-64 m-auto" src={product.image} alt="" />

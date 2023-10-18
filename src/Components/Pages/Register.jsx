@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -7,8 +7,10 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 
 const Register = () => {
-  const { createAccount, userPhotoAndNameUpdate } = useContext(AuthContext);
+  const { createAccount, userPhotoAndNameUpdate, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navegate = useNavigate("");
+  const location = useLocation();
 
   const handelRegister = (e) => {
     e.preventDefault();
@@ -34,21 +36,40 @@ const Register = () => {
 
     createAccount(email, password)
       .then((result) => {
+        console.log(result.user);
+        Swal.fire(
+          'Good Job',
+          'Register Successfully',
+          'success'
+        )
+        navegate(location?.state ? location.state : "/"); 
         userPhotoAndNameUpdate(name, photo)
-          .then(() => {
-             Swal.fire("Register Successful", "Please Login", "success");
-          })
+          .then(() => {})
           .catch((error) => {
             console.log(error)
           });
-          Swal.fire("Register Successful", "Please Login", "success");
+        
+         
       })
       .catch((error) => {
-        // Swal.fire(
-        //     'Email already used',
-        //     'Please Try Anther Email or Login',
-        //     'error'
-        //   )
+        console.error(error);
+      });
+  };
+  
+
+  const handleSocalLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire("Good Job", "Login SuccessFull", "success");
+        navegate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        Swal.fire(
+          "Sorry!!",
+          "Please Provide Valid email and password",
+          "error"
+        );
         console.error(error);
       });
   };
@@ -105,11 +126,12 @@ const Register = () => {
                   </svg>
                 </span>
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   id="design-login-email"
                   className="  flex-1 appearance-none border w-full py-2 px-4 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Email"
+                  required
                 />
               </div>
             </div>
@@ -143,8 +165,8 @@ const Register = () => {
               <span className="w-full">Register</span>
             </button>
           </form>
-          <div className="flex gap-4 item-center mt-5">
-            <button
+          <div  className="flex gap-4 item-center mt-5">
+            <button onClick={handleSocalLogin} 
               type="button"
               className="py-2 px-4 flex justify-center items-center border   hover:bg-[#FFCF9D] focus:ring-blue-500 focus:ring-offset-blue-200  w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 hover:text-black focus:ring-offset-2  rounded-lg "
             >

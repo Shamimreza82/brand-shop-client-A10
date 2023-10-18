@@ -27,7 +27,7 @@ const Brands = () => {
             {
                 brand.map (bra => 
                 <div key={bra.brand} >
-                <Link to={`/products/${bra.brand}`} className='mt-6'>
+                <Link to={`/products/${bra.brand}`} className='mt-6 '>
                 <div className=' shadow-lg p-5'>
                     <img className='h-48 w-full rounded-lg' src={bra.image} alt="" />
                     <p className='text-center py-3 uppercase font-bold'>{bra.brand}</p>
