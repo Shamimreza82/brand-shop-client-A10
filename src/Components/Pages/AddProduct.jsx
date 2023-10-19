@@ -25,7 +25,7 @@ const AddProduct = () => {
       description,
     };
 
-    fetch("https://brand-shop-server-pv8bd4lx4-shamim-rezas-projects.vercel.app/products", {
+    fetch("https://brand-shop-server-g9l9v12z0-shamim-rezas-projects.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

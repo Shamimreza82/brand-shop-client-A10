@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import Footer from "../Mainlayout/Footer";
 
 const UpdateProduct = () => {
   const updateProduct = useLoaderData();
@@ -29,7 +30,7 @@ const UpdateProduct = () => {
       description,
     };
 
-    fetch(`https://brand-shop-server-pv8bd4lx4-shamim-rezas-projects.vercel.app/updateProduct/${updateProduct.name}`, {
+    fetch(`https://brand-shop-server-g9l9v12z0-shamim-rezas-projects.vercel.app/updateProduct/${updateProduct.name}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -52,7 +53,8 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div className="max-w-7xl m-auto">
+    <div>
+      <div className="max-w-7xl m-auto">
       <Helmet>
         <title>Tech Globe Hub | Update Product</title>
       </Helmet>
@@ -150,7 +152,7 @@ const UpdateProduct = () => {
                 />
               </div>
               <input
-                className="btn w-full mt-4 "
+                className="btn w-full mt-4"
                 type="submit"
                 value="Update Product"
               />
@@ -158,6 +160,9 @@ const UpdateProduct = () => {
           </div>
         </div>
       </div>
+      
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

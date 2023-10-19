@@ -1,6 +1,4 @@
-import React from "react";
-import bg from "../../assets/brand-image/maxim-hopman-Hin-rzhOdWs-unsplash.jpg";
-import bg2 from "../../assets/brand-image/23324.jpg";
+
 import bg3 from "../../assets/brand-image/Untitled-3.png";
 
 const Banner = () => {
@@ -14,8 +12,8 @@ const Banner = () => {
     >
       {/* <div className="hero-overlay bg-opacity-60 "></div> */}
       <div className="flex gap-3 flex-col-reverse md:flex-row justify-center items-center max-w-7xl m-auto">
-        <div className=" text-neutral-content z-30 md:w-[50%]">
-          <div className="ml-12">
+        <div className=" md:w-[50%]">
+          <div className="md:ml-12 ">
             <h1 className="mb-5 md:text-5xl text-slate-800 text-2xl ">
               Subscribe to <br />
               <span className="font-Roboto font-bold  text-slate-80 drop-shadow-md ">ENJOY 30% OFF</span>

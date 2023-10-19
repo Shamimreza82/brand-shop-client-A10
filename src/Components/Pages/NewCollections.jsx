@@ -6,7 +6,7 @@ const NewCollections = () => {
   console.log(prodect);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://brand-shop-server-g9l9v12z0-shamim-rezas-projects.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
