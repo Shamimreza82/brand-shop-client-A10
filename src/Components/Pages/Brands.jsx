@@ -21,8 +21,8 @@ const Brands = () => {
     return (
         <div className='max-w-7xl m-auto'>
             
-            <h1 className='text-2xl py-6 text-center font-bold'>Our Brand</h1>
-            <div className='grid grid-cols-3 gap-4'>
+            <h1 className='text-2xl py-6 text-center font-bold mt-24'>Our Brand</h1>
+            <div className='grid md:grid-cols-3 gap-4'>
             
             {
                 brand.map (bra => 

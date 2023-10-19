@@ -25,7 +25,7 @@ const AddProduct = () => {
       description,
     };
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://brand-shop-server-pv8bd4lx4-shamim-rezas-projects.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

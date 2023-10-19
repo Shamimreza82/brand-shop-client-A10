@@ -51,27 +51,27 @@ const router = createBrowserRouter([
             {
                 path: '/products/:id',
                 element: <Brand></Brand>, 
-                loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`) 
+                loader: ({params}) => fetch(`https://brand-shop-server-pv8bd4lx4-shamim-rezas-projects.vercel.app/products/${params.id}`) 
                 
             }, 
             {
                 path: '/productDetails/:id',
                 element: <ProductDetails></ProductDetails>, 
-                loader: ({params}) => fetch(`http://localhost:5000/productDetails/${params.id}`)
+                loader: ({params}) => fetch(`https://brand-shop-server-pv8bd4lx4-shamim-rezas-projects.vercel.app/productDetails/${params.id}`)
             }, 
             {
                 path: '/myCart', 
                 element: <PrivateRoute>
                     <MyCart></MyCart>
                 </PrivateRoute>, 
-                loader: () => fetch('http://localhost:5000/productsCart')
+                loader: () => fetch('https://brand-shop-server-pv8bd4lx4-shamim-rezas-projects.vercel.app/productsCart')
             }, 
             {
                 path: '/updateProduct/:id', 
                 element: <PrivateRoute>
                     <UpdateProduct></UpdateProduct>
                 </PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/updateProduct/${params.id}`)
+                loader: ({params}) => fetch(`https://brand-shop-server-pv8bd4lx4-shamim-rezas-projects.vercel.app/updateProduct/${params.id}`)
 
             }
 

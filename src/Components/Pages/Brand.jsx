@@ -7,11 +7,14 @@ const Brand = () => {
     
 
     const Products = useLoaderData()
-    const [empty, setEmpty] = useState()
 
-    // if(Products.length === 0) {
-       
-    // }
+
+    if(Products.length === 0) {
+       console.log("empty");
+       return <div className='flex h-screen justify-center items-center '>
+        <p className='bg-red-300 w-full text-center text-black py-4 px-3'>Product is not available in this category</p>
+       </div>
+    }
 
     // const filter = brands.filter(bra => bra.brand !== brand)
     // console.log(filter);
