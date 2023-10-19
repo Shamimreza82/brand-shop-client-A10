@@ -1,6 +1,6 @@
-# APP Neme: Tech Globe Hub
+# Site Neme: Tech Globe Hub (This is a brand shop)
 
-# Live Link: https://brand-shop-af581.web.app
+* Live Link: https://brand-shop-af581.web.app
 
 
 # Some important feature in this website
