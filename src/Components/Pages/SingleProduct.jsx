@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 const SingleProduct = ({ product }) => {
   // console.log(product);
 
+  
+
+
   return (
     <div>
       <div>
@@ -33,7 +36,8 @@ const SingleProduct = ({ product }) => {
             <div className="flex mb-4 text-sm font-medium">
               <Link to={`/productDetails/${product._id}`}
                 type="button"
-                className="py-2 px-4   focus:ring-offset-indigo-200 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                className="font-Roboto font-bold text-base border p-2 px-3
+                border-[#F08E31] text-[#F08E31] hover:scale-105 hover:duration-300 duration-300"
               >
                 More details 
               </Link>

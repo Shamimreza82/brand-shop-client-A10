@@ -1,23 +1,51 @@
 import React from "react";
-import bg from '../../assets/brand-image/maxim-hopman-Hin-rzhOdWs-unsplash.jpg'
+import bg from "../../assets/brand-image/maxim-hopman-Hin-rzhOdWs-unsplash.jpg";
+import bg2 from "../../assets/brand-image/23324.jpg";
+import bg3 from "../../assets/brand-image/Untitled-3.png";
 
 const Banner = () => {
   return (
     <div
-      className="hero min-h-screen"
-      style={{
-        backgroundImage:
-         `url(${bg})` ,
-      }}
+      className=" m-auto py-4 md:py-28 bg-slate-200"
+      // style={{
+      //   backgroundImage:
+      //    `url(${bg3})`,
+      // }}
     >
-      <div className="brightness-50"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="">
-          <h1 className="mb-5 md:text-5xl text-2xl text-black font-bold">Pioneering Global Technological Advancements</h1>
-          <p className="mb-5 text-black">
-          Tech Globe Hub serves as a pioneering nexus for global innovation, fostering collaboration and driving technological breakthroughs that transcend borders. It is the epicenter of cutting-edge advancements, 
-          </p>
-          <button className="btn btn-primary">Get Started</button>
+      {/* <div className="hero-overlay bg-opacity-60 "></div> */}
+      <div className="flex gap-3 flex-col-reverse md:flex-row justify-center items-center max-w-7xl m-auto">
+        <div className=" text-neutral-content z-30 md:w-[50%]">
+          <div className="ml-12">
+            <h1 className="mb-5 md:text-5xl text-slate-800 text-2xl ">
+              Subscribe to <br />
+              <span className="font-Roboto font-bold  text-slate-80 drop-shadow-md ">ENJOY 30% OFF</span>
+            </h1>
+
+            <div className="form-control">
+              <input
+                type="text"
+                placeholder="Name"
+                className="input input-bordered font-Roboto font-bold text-base border p-2 px-3
+                border-[#F08E31] text-[#F08E31] hover:scale-105 hover:duration-300 duration-300"
+                required
+              />
+            </div>
+            <div className="form-control my-4">
+              <input
+                type="text"
+                placeholder="Email"
+                className="input input-bordered font-Roboto font-bold text-base border p-2 px-3
+                border-[#F08E31] text-[#F08E31] hover:scale-105 hover:duration-300 duration-300"
+                required
+              />
+            </div>
+
+            <button className="font-Roboto font-bold text-base border p-2 px-6
+                border-[#F08E31] text-white bg-[#F08E31]  hover:scale-105 hover:duration-300 duration-300">Submit</button>
+          </div>
+        </div>
+        <div className="w-md:[50%]">
+          <img className="" src={bg3} alt="" />
         </div>
       </div>
     </div>

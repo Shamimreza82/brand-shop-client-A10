@@ -159,14 +159,16 @@ const ProductDetails = () => {
                       <div className="flex justify-between items-center">
                         <span className="title-font font-medium text-2xl ">{singleItem.price}/=</span>
                         <Link onClick={handlemycart}
-                               className="btn"
+                               className="font-Roboto font-bold text-base border p-2 px-3
+                               border-[#F08E31] text-[#F08E31] hover:scale-105 hover:duration-300 duration-300"
                                 type="button"
                                 >
                               Add to Cart
                               </Link>
                               <Link to={`/updateProduct/${singleItem.name}`} >
                             <button
-              className="btn"
+              className="font-Roboto font-bold text-base border p-2 px-3
+              border-[#F08E31] text-[#F08E31] hover:scale-105 hover:duration-300 duration-300"
               type="button"
             >
               Update Product

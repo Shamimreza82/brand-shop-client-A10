@@ -67,52 +67,52 @@ export const Navber = () => {
               </span>
           </div>
             <ul className="flex items-center hidden space-x-8 lg:flex">
-              <li>
+              <li className="hover:scale-105 hover:duration-300 duration-700">
                 <Link
                   to="/"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
+                  className=" p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   Home
                 </Link>
-              </li>
-              <li>
+              </li >
+              <li className="hover:scale-105 hover:duration-300 duration-700">
                 <Link
                   to="/addProduct"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
+                  className="p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   Add Product
                 </Link>
               </li>
-              <li>
+              <li className="hover:scale-105 hover:duration-300 duration-700">
                 <Link
                   to="/myCart"
                   aria-label="Product pricing"
                   title="Product pricing"
-                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
+                  className="p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   My Cart
                 </Link>
               </li>
-              <li>
+              <li className="hover:scale-105 hover:duration-300 duration-700">
                 <Link
                   to="/about"
                   aria-label="About us"
                   title="About us"
-                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
+                  className="p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   About us
                 </Link>
               </li>
-              <li>
+              <li className="hover:scale-105 hover:duration-300 duration-700">
                 <Link
                   to="/contact"
                   aria-label="About us"
                   title="About us"
-                  className="font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
+                  className="p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
                 >
                   Contact
                 </Link>
@@ -128,10 +128,11 @@ export const Navber = () => {
 
               {
                 user ? 
-              <li className="flex justify-center items-center gap-3">
-                <Link
+              <li className="flex justify-center items-center gap-3 ">
+                <Link 
                   onClick={handleSineOut}
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  className="font-Roboto font-bold text-base border p-1 px-3
+                  border-[#F08E31] text-[#F08E31]   hover:scale-105 hover:duration-300 duration-300"
                   aria-label="Sign up"
                   title="Sign up"
                 >
@@ -143,10 +144,11 @@ export const Navber = () => {
                 <img className="rounded-full w-12" src={user.photoURL} alt="" />
                 
               </li> :
-              <li>
+              <li className=" hover:scale-105 hover:duration-300 duration-300">
               <Link
                 to="/login"
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                className="font-Roboto font-bold text-base border p-2 px-3
+                 border-[#F08E31] text-[#F08E31] "
                 aria-label="Sign up"
                 title="Sign up"
               >

@@ -7,6 +7,7 @@ const Brand = () => {
     
 
     const Products = useLoaderData()
+    console.log(Products);
 
 
     if(Products.length === 0) {
