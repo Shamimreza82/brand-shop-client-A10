@@ -12,12 +12,12 @@ const NewCollections = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl m-auto">
-      <h1 className="text-2xl text-center md:mt-24 mt-4 font-bold underline">
+    <div className="max-w-7xl m-auto mt-20">
+      <h1 className="md:text-4xl text-xl text-center mt-4 font-bold mb-6 ">
         Our Popular Product
       </h1>
       <section className=" body-font">
-        <div className="container px-5 py-24 mx-auto ">
+        <div className="container px-5 mx-auto ">
           <div className=" grid md:grid-cols-4 gap-4">
             {prodect.slice(0, 8).map((products) => (
               <div key={products._id} className="  w-full border p-3 m-2 hover:scale-105 

@@ -21,7 +21,7 @@ const Brands = () => {
     return (
         <div className='max-w-7xl m-auto'>
             
-            <h1 className='text-2xl py-6 text-center font-bold mt-24'>Our Brand</h1>
+            <h1 className='md:text-4xl md:py-6 text-center font-bold my-8 '>Our Brand</h1>
             <div className='grid md:grid-cols-3 gap-4 '>
             
             {

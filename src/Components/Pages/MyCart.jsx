@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import Footer from "../Mainlayout/Footer";
 
 const MyCart = () => {
   const lodedmyCarts = useLoaderData();
@@ -41,14 +42,15 @@ const MyCart = () => {
 
   return (
     <div>
+      <div className="max-w-7xl m-auto min-h-screen">
       <Helmet>
         <title>Tech Globe Hub | My Cart</title>
       </Helmet>
-      <div className="md:w-[80%] m-auto grid md:grid-cols-2 gap-3 ">
+      <div className="md:w-[80%] m-auto grid md:grid-cols-2 gap-3 mt-8 ">
         {myCarts.map((myCart) => (
           <div
             key={myCart._id}
-            className=" mt-8 p-4 shadow-lg  rounded-md flex gap-4 border"
+            className="p-4 shadow-lg  rounded-md flex gap-4 border"
           >
             <div className="md:w-[40%]">
               <img className="md:h-52 ml-4 " src={myCart.image} alt="" />
@@ -58,7 +60,7 @@ const MyCart = () => {
                 <strong>Model: </strong>
                 {myCart.name}
               </p>
-              <p className="mt-2"><strong>Price:</strong> {myCart.price}/-</p>
+              <p className="mt-2 text-sm"><strong>Price:</strong> {myCart.price}/- BDT</p>
               <div className="md:flex">
               <div className="rating mt-3">
                       <input
@@ -101,78 +103,8 @@ const MyCart = () => {
           </div>
         ))}
       </div>
-
-
-
-      {/* <div>
-        {myCarts.map((myCart) => (
-          <section key={myCart._id} className=" body-font">
-            <div className="container px-5 py-24 mx-auto flex flex-wrap">
-              <div className="p-4 lg:w-1/2 md:w-full">
-                <div className="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
-                  <div className="sm:mr-8 w-48 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full ">
-                    <img src={myCart.image} alt="" />
-                  </div>
-                  <div className="flex-grow">
-                    <h2 className=" text-lg title-font font-medium mb-3">
-                      {myCart.brand}
-                    </h2>
-                    <h2 className=" text-lg title-font font-medium mb-3">
-                      {myCart.name}
-                    </h2>
-                    <p className="leading-relaxed text-base">{myCart.price}</p>
-                    <div className="rating">
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        className="mask mask-star-2 bg-orange-400"
-                      />
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        className="mask mask-star-2 bg-orange-400"
-                        checked
-                      />
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        className="mask mask-star-2 bg-orange-400"
-                      />
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        className="mask mask-star-2 bg-orange-400"
-                      />
-                      <input
-                        type="radio"
-                        name="rating-2"
-                        className="mask mask-star-2 bg-orange-400"
-                      />
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => handleDelete(myCart._id)}
-                    className="mt-40 text-red-600 inline-flex items-center border p-2 font-bold"
-                  >
-                    Delete
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      className="w-4 h-4 ml-2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-        ))}
-      </div> */}
+    </div>
+    <Footer> </Footer>
     </div>
   );
 };

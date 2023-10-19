@@ -43,12 +43,14 @@ const ProductDetails = () => {
         {singleProduct.map((singleItem) => (
           <section key={singleItem._id} className="body-font overflow-hidden">
             <div className="container px-5 py-24 mx-auto">
-              <div className="lg:w-4/5 mx-auto flex flex-wrap">
+              <div className="flex flex-col md:flex-row">
+                <div className="flex justify-center md:w-[40%]">
                 <img
                   alt="ecommerce"
-                  className="lg:w-1/2 w-full md:h-[400px] rounded"
+                  className="rounded md:h-96 h-44 "
                   src={singleItem.image}
                 />
+                </div>
                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                   <h2 className="text-sm title-font  tracking-widest">
                     {singleItem.brand}
@@ -165,13 +167,13 @@ const ProductDetails = () => {
                     <div className="flex ml-6 items-center">
                     </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="title-font font-medium text-2xl ">
-                      {singleItem.price}/=
+                  <div className="flex flex-col md:flex-row justify-between ">
+                    <span className="title-font font-bold text-gray-500 ">
+                     Price: {singleItem.price}/= BDT
                     </span>
                     <Link
                       onClick={handlemycart}
-                      className="font-Roboto font-bold text-base border p-2 px-3
+                      className="font-Roboto font-bold text-base border p-2 px-3 mt-3 text-center md:ml-32
                                border-[#F08E31] text-[#F08E31] hover:scale-105 hover:duration-300 duration-300"
                       type="button"
                     >
@@ -179,7 +181,7 @@ const ProductDetails = () => {
                     </Link>
                     <Link to={`/updateProduct/${singleItem.name}`}>
                       <button
-                        className="font-Roboto font-bold text-base border p-2 px-3
+                        className="font-Roboto font-bold text-base border p-2 px-3 mt-3 w-full
                         border-[#F08E31] text-[#F08E31] hover:scale-105 hover:duration-300 duration-300"
                         type="button"
                       >

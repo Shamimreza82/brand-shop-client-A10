@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SingleProduct from './SingleProduct';
 import { Helmet } from 'react-helmet';
+import Footer from '../Mainlayout/Footer';
 
 const Brand = () => {
     
@@ -21,55 +22,16 @@ const Brand = () => {
     // console.log(filter);
 
     return (
-        <div className='max-w-7xl m-auto'>
+        <div>
+            <div className='max-w-7xl m-auto min-h-screen'>
             <Helmet>
             <title>Tech Globe Hub | All Brands</title>
           </Helmet>
 
-            {/* <div className='md:py-10 '>
-            <div className="carousel  w-full py-10 bg-slate-200">
-                <div id="item1" className="carousel-item w-full">
-                    {
-                        Products.slice(0, 1) .map(product => 
-                            <img src={product.image} className="h-60" />
-                            )
-                    }
-                </div> 
-                <div id="item2" className="carousel-item w-full ">
-                    {
-                        Products.slice(1, 2) .map(product => 
-                            <img src={product.image} className="h-60" />
-                            )
-                    }
-                </div> 
-                <div id="item3" className="carousel-item w-full ">
-                    {
-                        Products.slice(2, 3) .map(product => 
-                            <img src={product.image} className="h-60" />
-                            )
-                    }
-                </div> 
-                <div id="item4" className="carousel-item w-full">
-                    {
-                        Products.slice(3, 4) .map(product => 
-                            <img src={product.image} className="h-60" />
-                            )
-                    }
-                </div>
-                </div> 
-                <div className="flex justify-center w-full py-2 gap-2">
-                <a href="#item1" className="btn btn-xs">1</a> 
-                <a href="#item2" className="btn btn-xs">2</a> 
-                <a href="#item3" className="btn btn-xs">3</a> 
-                <a href="#item4" className="btn btn-xs">4</a>
-            </div>
-                            
-            </div> */}
-
-                    <div className="carousel w-full py-12 ">
+                    <div className="carousel w-full md:py-20 py-4 ">
                     <div id="slide1" className="carousel-item relative w-full flex justify-center">
                         {Products.slice(0, 1) .map(product => <div key={product._id} className='flex gap-8 flex-col md:flex-row items-center'>
-                            <img src={product.image} className="h-60 " />
+                            <img src={product.image} className="md:h-60 " />
                             <div className='space-y-2'>
                                 <p className='md:text-4xl font-bold text-xl'>{product.name}</p>
                                 <p className='font-bold  text-orange-600'>Price: {product.price} BDT</p>
@@ -121,22 +83,14 @@ const Brand = () => {
                     </div>
                     </div>
 
-
-
-
-
-
-
-
-
-   {/* ---------------------------------------------------------------------------------------------------------- */}
-
-            <div className='grid md:grid-cols-2 gap-5'>
+            <div className='grid md:grid-cols-2 gap-5 max-w-5xl m-auto px-3'>
                 {
                    Products.map(product => <SingleProduct key={product._id} product={product} ></SingleProduct>) 
                 }
 
             </div>
+        </div>
+        <Footer></Footer>
         </div>
     );
 };
