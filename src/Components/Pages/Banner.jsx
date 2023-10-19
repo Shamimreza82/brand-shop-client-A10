@@ -12,12 +12,10 @@ const Banner = () => {
     >
       <div className="brightness-50"></div>
       <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-          <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+        <div className="">
+          <h1 className="mb-5 md:text-5xl text-2xl text-black font-bold">Pioneering Global Technological Advancements</h1>
+          <p className="mb-5 text-black">
+          Tech Globe Hub serves as a pioneering nexus for global innovation, fostering collaboration and driving technological breakthroughs that transcend borders. It is the epicenter of cutting-edge advancements, 
           </p>
           <button className="btn btn-primary">Get Started</button>
         </div>
