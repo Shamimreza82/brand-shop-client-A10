@@ -10,7 +10,7 @@ const SingleProduct = ({ product }) => {
   return (
     <div>
       <div >
-        <div className="flex flex-col md:flex-row  rounded-lg shadow border px-3">
+        <div className="flex flex-col md:flex-row  rounded-lg shadow border px-3" >
           <div className="mt-6 flex justify-center md:w-[50%]">
             <img
               src={product.image}

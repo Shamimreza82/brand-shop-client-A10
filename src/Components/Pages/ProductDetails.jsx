@@ -28,7 +28,7 @@ const ProductDetails = () => {
         console.log(data);
         Swal.fire(
           "Cart Successfull",
-          "Check the Product My Car Section",
+          "Check the Product myCart section",
           "success"
         );
       });

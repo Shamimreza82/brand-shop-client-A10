@@ -62,7 +62,9 @@ export const Navber = () => {
           <span>
               <img className="h-12 rounded-full" src={logo} alt="" />
              </span>
-              <span className="ml-2 text-xl font-bold tracking-wide ">
+              <span className="ml-2 text-xl font-bold tracking-wide " 
+              data-aos="zoom-out-down"
+              data-aos-duration="1000">
               Tech Globe Hub
               </span>
           </div>
@@ -132,7 +134,7 @@ export const Navber = () => {
                 <Link 
                   onClick={handleSineOut}
                   className="font-Roboto font-bold text-base border p-1 px-3
-                  border-[#F08E31] text-[#F08E31]   hover:scale-105 hover:duration-300 duration-300"
+                  border-[#F08E31] text-[#F08E31] rounded-sm   hover:scale-105 hover:duration-300 duration-300"
                   aria-label="Sign up"
                   title="Sign up"
                 >
@@ -147,7 +149,7 @@ export const Navber = () => {
               <li className=" hover:scale-105 hover:duration-300 duration-300">
               <Link
                 to="/login"
-                className="font-Roboto font-bold text-base border p-2 px-3
+                className="font-Roboto font-bold text-base border p-2 px-3 rounded-sm
                  border-[#F08E31] text-[#F08E31] "
                 aria-label="Sign up"
                 title="Sign up"

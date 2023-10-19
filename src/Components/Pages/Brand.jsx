@@ -83,7 +83,7 @@ const Brand = () => {
                     </div>
                     </div>
 
-            <div className='grid md:grid-cols-2 gap-5 max-w-5xl m-auto px-3'>
+            <div className='grid md:grid-cols-2 gap-5 max-w-5xl m-auto px-3'  >
                 {
                    Products.map(product => <SingleProduct key={product._id} product={product} ></SingleProduct>) 
                 }

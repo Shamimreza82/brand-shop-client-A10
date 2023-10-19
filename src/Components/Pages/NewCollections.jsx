@@ -21,7 +21,7 @@ const NewCollections = () => {
           <div className=" grid md:grid-cols-4 gap-4">
             {prodect.slice(0, 8).map((products) => (
               <div key={products._id} className="  w-full border p-3 m-2 hover:scale-105 
-              hover:duration-300 duration-300 hover:border-[#F08E31]">
+              hover:duration-300 duration-300 hover:border-[#F08E31]" data-aos="zoom-in">
                 <a className="relative rounded overflow-hidden flex py-3 justify-center hover:scale-105 hover:duration-300 duration-300 ">
                   <img
                     alt="ecommerce"
