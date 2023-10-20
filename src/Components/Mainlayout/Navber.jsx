@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import logo from '../../assets/brand-image/Logo.jpg'
@@ -69,56 +69,57 @@ export const Navber = () => {
               Tech Globe Hub
               </span>
           </div>
-            <ul className="flex items-center hidden space-x-8 lg:flex">
-              <li className="hover:scale-105 hover:duration-300 duration-700">
-                <Link
-                  to="/"
-                  aria-label="Our product"
-                  title="Our product"
-                  className=" p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  Home
-                </Link>
+            <ul className="flex items-center hidden space-x-6 lg:flex font-Roboto">
+              <li >
+                  <NavLink
+                    to="/"
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "border-b-4  border-b-[#F08E31]" : ""
+                    }
+                  >
+                    Home
+                  </NavLink>
               </li >
-              <li className="hover:scale-105 hover:duration-300 duration-700">
-                <Link
-                  to="/addProduct"
-                  aria-label="Our product"
-                  title="Our product"
-                  className="p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  Add Product
-                </Link>
+              <li >
+                  <NavLink
+                    to="/addProduct"
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "border-b-4  border-b-[#F08E31]" : ""
+                    }
+                  >
+                     Add Product
+                  </NavLink>
+
               </li>
-              <li className="hover:scale-105 hover:duration-300 duration-700">
-                <Link
-                  to="/myCart"
-                  aria-label="Product pricing"
-                  title="Product pricing"
-                  className="p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  My Cart
-                </Link>
+              <li >
+               <NavLink
+                    to="/myCart"
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "border-b-4  border-b-[#F08E31]" : ""
+                    }
+                  >
+                     My Cart
+                  </NavLink>
               </li>
-              <li className="hover:scale-105 hover:duration-300 duration-700">
-                <Link
-                  to="/about"
-                  aria-label="About us"
-                  title="About us"
-                  className="p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  About us
-                </Link>
+              <li >
+                 <NavLink
+                    to="/about"
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "border-b-4  border-b-[#F08E31]" : ""
+                    }
+                  >
+                     About Us
+                  </NavLink>
               </li>
-              <li className="hover:scale-105 hover:duration-300 duration-700">
-                <Link
-                  to="/contact"
-                  aria-label="About us"
-                  title="About us"
-                  className="p-2 hover:border rounded-md border-[#F08E31]  hover:scale-105 hover:duration-300  font-medium tracking-wide  transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  Contact
-                </Link>
+              <li >
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "border-b-4 border-b-[#F08E31]" : ""
+                    }
+                  >
+                     Contact
+                  </NavLink>
               </li>
                
 

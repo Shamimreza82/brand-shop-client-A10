@@ -21,12 +21,12 @@ const Brands = () => {
     return (
         <div className='max-w-7xl m-auto px-3' >
             
-            <h1 className='md:text-4xl md:py-6 text-center font-bold my-8 '>Our Brand</h1>
+            <h1 className='md:text-4xl md:py-6 text-center font-bold my-8 '>All Brands</h1>
             <div className='grid md:grid-cols-3 gap-4 '>
             
             {
                 brand.map (bra => 
-                <div key={bra.brand} className='hover:scale-105 hover:duration-300 duration-300 border hover:border-[#F08E31]' data-aos="zoom-in" >
+                <div key={bra.brand} className=' hover:scale-105 hover:duration-300 duration-300 border hover:border-[#F08E31]' data-aos="zoom-in" >
                 <Link to={`/products/${bra.brand}`} className='mt-6 '>
                 <div className=' shadow-lg p-5'>
                     <img className='md:h-48 w-full rounded-lg hover:scale-105 hover:duration-300 duration-300' src={bra.image} alt="" />
