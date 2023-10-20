@@ -9,6 +9,7 @@ export const Navber = () => {
 
   const {logeOut, googleLogin, user} = useContext(AuthContext); 
   // console.log(user);
+  console.log(user);
 
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "Light" ) 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -143,7 +144,12 @@ export const Navber = () => {
                   
                   </div>
                 </Link>
-                <img className="rounded-full w-12" src={user.photoURL} alt="" />
+                <div className="">
+                  <div>
+                  <img className="rounded-full w-8 ml-6" src={user.photoURL} alt="" />
+                  <p>{user.displayName}</p>
+                  </div>
+                </div>
                 
               </li> :
               <li className=" hover:scale-105 hover:duration-300 duration-300">
