@@ -1,6 +1,8 @@
 # Site Neme: Tech Globe Hub 
 
-* Live Link: https://brand-shop-af581.web.app
+### Live Link: https://brand-shop-af581.web.app
+
+### Server Code Link: https://github.com/Shamimreza82/brand-shop-server-A10
 
 
 # Some important feature in this website
