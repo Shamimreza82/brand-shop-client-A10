@@ -1,4 +1,5 @@
-## Site Neme: Tech Globe Hub 
+## Brand Shop Web Application
+### Site Neme: Tech Globe Hub 
 
 This Application is an e-commerce platform specializing in technology and electronics. It allows users to explore and purchase products from leading brands in the industry
 
